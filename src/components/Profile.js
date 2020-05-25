@@ -13,21 +13,11 @@ class Profile extends React.Component {
   };
 
   componentDidMount() {
-    // const { profile } = this.props;
     this.props.dispatch(initiateGetProfile());
-    // if (!_.isEmpty(profile)) {
-    //   const { first_name, last_name } = profile;
-    //   this.setState({
-    //     first_name,
-    //     last_name
-    //   });
-    // }
   }
 
   componentDidUpdate(prevProps) {
-    console.log('prevProps', prevProps);
     if (!_.isEqual(prevProps.profile, this.props.profile)) {
-      console.log('rpfile', this.props.profile);
       const { first_name, last_name } = this.props.profile;
       this.setState({ first_name, last_name });
     }
@@ -43,7 +33,7 @@ class Profile extends React.Component {
 
     if (first_name.trim() === '' && last_name.trim() === '') {
       this.setState({
-        errorMsg: 'Please enter all the fields.'
+        errorMsg: 'All the fields are required.'
       });
     } else {
       this.setState({ isSubmitted: true, errorMsg: '' });
