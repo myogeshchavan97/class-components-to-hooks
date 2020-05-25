@@ -37,7 +37,7 @@ const Profile = (props) => {
     };
 
     if (first_name.trim() === '' && last_name.trim() === '') {
-      setErrorMsg('Please enter all the fields.');
+      setErrorMsg('All the fields are required.');
     } else {
       setIsSubmitted(true);
       setErrorMsg('');
