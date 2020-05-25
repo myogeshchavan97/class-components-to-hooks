@@ -18,6 +18,6 @@ export const updateUserProfile = (updates) => {
         ...profile,
         ...updates
       });
-    }, 2000);
+    }, 1000);
   });
 };
